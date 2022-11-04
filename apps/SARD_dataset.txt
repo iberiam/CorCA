@@ -1,0 +1,2422 @@
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    int data; 
+    data = -1;
+    fscanf(stdin, "%d", &data); 
+    int i; 
+    int buffer[10] = { 0 };
+    if (data >= 0 && data < 10) { 
+        buffer[data] = 1;
+        for(i = 0; i < 10; i++) { 
+            printf("%d", buffer[i]); 
+        } 
+    } 
+    else { 
+            printf("ERROR: Array index out of bounds."); 
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    int data; 
+    static const int STATIC_CONST_FIVE = 5;
+    data = -1;
+    if(STATIC_CONST_FIVE==5)
+        fscanf(stdin, "%d", &data);
+    int *intPointer;
+    intPointer = (int*)malloc(data * sizeof(int));
+    for (int i = 0; i < (size_t)data; i++)
+        intPointer[i] = 0;
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = ""; 
+    char *data = dataBuffer;
+    fscanf(stdin, "%99s\0", data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = ""; 
+    char *data = dataBuffer;
+    if (fscanf(stdin, "%99s\0", data) == 0) { 
+        printf("fscanf failed!"); 
+    } else {
+        printf("fscanf succeed!");
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = ""; 
+    char *data = dataBuffer;
+    if (fscanf(stdin, "%s\0", data) == 0) { 
+        printf("fscanf failed!"); 
+    } else {
+        printf("fscanf succeed!");
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = ""; 
+    char *data = dataBuffer;
+    if (fscanf(stdin, "%120s", data) == 0) { 
+        printf("fscanf failed!"); 
+    } else {
+        printf("%s", data);
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = ""; 
+    char *data = dataBuffer;
+    if (fscanf(stdin, "%100s", data) == 0) { 
+        printf("fscanf failed!"); 
+    } else {
+        printf("%s", data);
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = ""; 
+    char *data = dataBuffer;
+    if (fscanf(stdin, "%50s", data) == 0) { 
+        printf("fscanf failed!"); 
+    } else {
+        printf("%s", data);
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char str1[10], str2[10], str3[10];
+    int year;
+    FILE * fp;
+    fp = fopen ("file.txt", "w+");
+    fputs("We are in 2021", fp);
+    rewind(fp);
+    fscanf(fp, "%s %s %s %d", str1, str2, str3, &year);
+    printf("Read String1 |%s|\n", str1 );
+    printf("Read String2 |%s|\n", str2 );
+    printf("Read String3 |%s|\n", str3 );
+    printf("Read Integer |%d|\n", year );
+    fclose(fp);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char buf[10];
+    if(gets(buf))
+	printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char buf[10];
+    char *a;
+    int j = 9;
+	int p = 57;
+    if(gets(buf))
+	printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char str1[10];
+    char str2[10];
+    scanf("%s", str2);
+    strcpy(str1,str2);
+    printf("String copied: %s\n", str1);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char str1[10];
+    char str2[11];
+    scanf("%11s", str2);
+    strcpy(str1,str2);
+    printf("String copied: %s\n", str1);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char str1[10];
+    char str2[11];
+    scanf("%10s", str2);
+    strcpy(str1,str2);
+    printf("String copied: %s\n", str1);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char str1[10];
+    char str2[10];
+    scanf("%11s", str2);
+    strcpy(str1,str2);
+    printf("String copied: %s\n", str1);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char str1[10];
+    char str2[10];
+    scanf("%9s", str2);
+    strcpy(str1,str2); 
+    printf("String copied: %s\n", str1);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char str1[10];
+    char str2[10];
+    scanf("%8s", str2);
+    strcpy(str1,str2);
+    printf("String copied: %s\n", str1);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char address[100];
+    scanf("%99s", address);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char address[100];
+    char *addrhead;
+    char *c;
+    char *bp;
+    scanf("%99s", address);
+    register char *addr;
+    addr++;
+    char *p = addrhead = addr;
+    p++;
+    printf("result: %s\n", address);
+	return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char address[100];
+    scanf("%99s", address);
+    char *addrhead;
+    char *c;
+    char *bp;
+    register char *addr;
+    addr++;
+    char *p = addrhead = addr;
+    p++;
+    printf("result: %s\n", address);
+	return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char address[100];
+    char *addrhead;
+    char *c;
+    char *bp;
+    scanf("%98s", address);
+    register char *addr;
+    addr++;
+    char *p = addrhead = addr;
+    p++;
+    printf("result: %s\n", address);
+	return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char address[20];
+	scanf("%18s", address);
+    char *addrhead;
+    char *c;
+    char *bp;
+    register char *addr;
+    addr++;
+    char *p = addrhead = addr;
+    p++;
+	return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char address[100];
+    char *addrhead;
+    char *c;
+    char *bp;
+    scanf("%101s", address);
+    register char *addr;
+    addr++;
+    char *p = addrhead = addr;
+    p++;
+    printf("result: %s\n", address);
+	return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char address[100];
+    char *addrhead;
+    char *c;
+    char *bp;
+    scanf("%100s", address);
+    register char *addr;
+    addr++;
+    char *p = addrhead = addr;
+    p++;
+    printf("result: %s\n", address);
+	return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char address[100];
+    char *addrhead;
+    char *c;
+    char *bp;
+    scanf("%s", address);
+    register char *addr;
+    addr++;
+    char *p = addrhead = addr;
+    p++;
+    printf("result: %s\n", address);
+	return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    int debug = 0;
+    int result = 0;
+    if (scanf("%d",&debug) != 1) {
+        result = -1;
+    }
+    printf("%d\n", debug);
+    printf("%d", result);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    int result = 0;
+	int debug = 0;
+    if (scanf("%d",&debug) != 1) {
+        result = -1;
+    }
+    printf("%d\n", debug);
+    printf("%d", result);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char address[20];
+    int i = 0, j = 0;;
+    scanf("%19s", address);
+    char *addrhead;
+    char *c;
+    char *bp;
+    register char *addr;
+    addr++;
+    for (i = 0; i < 20; i++)
+        i += i;
+    j = i;
+    char *p = addrhead = addr;
+    p++;
+    printf("result: %s\n", address);
+    printf("result-j: %d\n", j);
+	return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#define MAX_PATH 100
+int main (int argc, char **argv) {
+    char psz_remote[MAX_PATH], psz_server[MAX_PATH], psz_share[MAX_PATH];
+    psz_share[0] = 0;
+    sprintf(psz_remote, "\\\\%s\\%s", psz_server, psz_share);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    FILE *stonesoup_printf_context;
+    char *ss_tc_root = "SS_TC_ROOT";
+    int size_dirpath = strlen(ss_tc_root) + strlen("testData") + 2;
+    char *dirpath = (char*) malloc (size_dirpath * sizeof(char));
+    sprintf(dirpath, "%s/%s", ss_tc_root, "testData");
+    int size_filepath = strlen(dirpath) + strlen("logfile.txt") + 2;
+    char *filepath = (char*) malloc (size_filepath * sizeof(char));
+    sprintf(filepath, "%s/%s", dirpath, "logfile.txt");
+    stonesoup_printf_context = fopen(filepath, "w");
+    free(filepath);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    FILE *stonesoup_printf_context;
+    char *ss_tc_root = "SS_TC_ROOT";
+    int size_dirpath = strlen(ss_tc_root) + strlen("testData") + 2;
+    char *dirpath = (char*) malloc (size_dirpath * sizeof(char));
+    sprintf(dirpath, "%s/%s", ss_tc_root, "testData");
+    int size_filepath = strlen(dirpath) + strlen("logfile.txt") + 2;
+    char *filepath = (char*) malloc (size_filepath * sizeof(char));
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    FILE *stonesoup_printf_context;
+    int retval = 1;
+    char *ss_tc_root = getenv("SS_TC_ROOT");
+    if (ss_tc_root != NULL) {
+        int size_dirpath = strlen(ss_tc_root) + strlen("testData") + 2;
+        char *dirpath = (char*) malloc (size_dirpath * sizeof(char));
+        if (dirpath != NULL) {
+            sprintf(dirpath, "%s/%s", ss_tc_root, "testData");
+            retval = 0;
+        }
+        if (retval == 0) {
+            int size_filepath = strlen(dirpath) + strlen("logfile.txt") + 2;
+            char *filepath = (char*) malloc (size_filepath * sizeof(char));
+            if (filepath != NULL) {
+                sprintf(filepath, "%s/%s", dirpath, "logfile.txt");
+                stonesoup_printf_context = fopen(filepath, "w");
+            }
+            free(filepath);
+        }
+        free(dirpath);
+    }
+    if (stonesoup_printf_context == NULL) {
+        int null = 0;
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define NUM_RAND_ALLOCS 50
+
+int main (int argc, char **argv) {
+    int pl = 0, i = 0;
+    int *p;
+    for (i = 0; i < NUM_RAND_ALLOCS; i++) {
+        char text[80];
+        sprintf(text, "|OTHER-PRIVATE-CONFIDENTIAL-SECRET-MEMORY-%02d",i);
+        pl = strlen(text) * 32 * (i+1);
+        p = malloc(pl);
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAX_PATH 100
+
+int main (int argc, char **argv) {
+    char *psz_path= "Psz_path:serchingfor/long";
+    char psz_remote[MAX_PATH], psz_server[MAX_PATH], psz_share[MAX_PATH];
+    psz_share[0] = 0;
+    char * psz_parser = strchr(psz_path, '/');
+    if(psz_parser){
+        char *psz_parser2 = strchr(++psz_parser, '/');
+        sprintf(psz_remote, "\\\\%s\\%s", psz_server, psz_share);
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    int stonesoup_lsize = 0;
+    int stonesoup_result = 0;
+    char stonesoup_buffer_stack[10];
+    char *cereus_albatrosses = "cereus_albatrosses";
+    char *stonesoup_tainted_file_name = "stonesoup_env_var_name";
+    FILE *stonesoup_tainted_file = fopen(stonesoup_tainted_file_name,"rb");
+    if (stonesoup_tainted_file != 0) {
+        fseek(stonesoup_tainted_file,0L,2);
+        stonesoup_lsize = ftell(stonesoup_tainted_file);
+        rewind(stonesoup_tainted_file);
+    }
+    char *stonesoup_tainted_buff = ((char *)(malloc(sizeof(char)*(stonesoup_lsize + 1))));
+    if (*stonesoup_tainted_buff != 0)
+        stonesoup_result = fread(stonesoup_tainted_buff,1,stonesoup_lsize,stonesoup_tainted_file);
+    if (stonesoup_tainted_file != 0) {
+        fclose(stonesoup_tainted_file);
+    }
+    sprintf(stonesoup_buffer_stack,cereus_albatrosses);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *rectorates_kossuth = getenv("ARRANT_UNSTUNTED");
+    char stonesoup_buffer_stack[10];
+    if (rectorates_kossuth != 0) {
+        char *edom_gabion = rectorates_kossuth;
+        char *gulick_fourchette = edom_gabion;
+        char *hoidening_innuendoing = (char *)(gulick_fourchette);
+        sprintf(stonesoup_buffer_stack,hoidening_innuendoing);
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+
+int main (int argc, char **argv) {
+    char buf[20];
+    char *userstr = "";
+    if(argc > 1)
+        userstr = argv[1];
+    sprintf(buf, "<%s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char buf[20];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    if(strlen(userstr) > 20)
+        sprintf(buf, "<%s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char buf[20];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    if(strlen(userstr) < 20)
+        sprintf(buf, "<%s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char buf[20];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    if(strlen(userstr) <= 20)
+        sprintf(buf, "<%s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 20
+
+int main (int argc, char **argv) {
+    char buf[MAXSIZE];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    sprintf(buf, "<%.5s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 20
+
+int main (int argc, char **argv) {
+    char buf[MAXSIZE];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    if(strlen(userstr) <= MAXSIZE)
+        sprintf(buf, "<%s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char stonesoup_buffer_stack[128] = {0};
+    char *adoniad_sinigrin = "vinaigretted_reimprint";
+    sprintf(stonesoup_buffer_stack,adoniad_sinigrin);
+    printf("result: %s\n", stonesoup_buffer_stack);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 30
+
+int main (int argc, char **argv) {
+    char buf[MAXSIZE];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    sprintf(buf, "<%.32s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 30
+
+int main (int argc, char **argv) {
+    char buf[MAXSIZE];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    sprintf(buf, "<%.29s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 30
+
+int main (int argc, char **argv) {
+    char buf[MAXSIZE];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    if(strlen(userstr) >= MAXSIZE - 3)
+        sprintf(buf, "<%s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 30
+
+int main (int argc, char **argv) {
+    char buf[MAXSIZE];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    if(strlen(userstr) < MAXSIZE - 3)
+        sprintf(buf, "<%s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 30
+
+int main (int argc, char **argv) {
+    char buf[MAXSIZE];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    sprintf(buf, "<%s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 30
+
+int main (int argc, char **argv) {
+    char buf[MAXSIZE];
+    char *userstr = "";
+    if(argc > 1) 
+        userstr = argv[1];
+    sprintf(buf, "<%.27s>", userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#define SRC "sscanf"
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = ""; 
+    char *data = dataBuffer; 
+    /* FLAW: Do not check the return value */
+    sscanf(SRC, "%99s\0", data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#define SRC "sscanf"
+
+int main (int argc, char **argv) {
+    char dataBuffer[10] = ""; 
+    char *data = dataBuffer; 
+    /* FLAW: Do not check the return value */
+    if(sscanf(SRC, "%s\0", data))
+        printf("result: %s\n", data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#define SRC "sscanfsscanfsscanf"
+
+int main (int argc, char **argv) {
+    char dataBuffer[10] = ""; 
+    char *data = dataBuffer; 
+    /* FLAW: Do not check the return value */
+    if(sscanf(SRC, "%s\0", data))
+        printf("result: %s\n", data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = "";
+    char *data = dataBuffer;
+    strcpy(data, "fixedstringtest");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *buf = (char *) malloc (25 * sizeof(char));
+    buf = NULL;
+    strcpy(buf,"This is String");
+    free(buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *data = (char *)malloc((10+1)*sizeof(char));
+    data = NULL;
+    strcpy(data, "source");
+    printf("%s", data);
+    free(data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *data = NULL;
+    data = (char *)malloc((10+1)*sizeof(char));
+    strcpy(data, "source");
+    printf("%s", data);
+    free(data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = "";
+    char *data = dataBuffer;
+    strcpy(data, "fixedstringtest");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = "";
+    char dest[10] = "";
+    char *data = (char *)malloc(100*sizeof(char));
+    data[50-1] = '\0';
+    strcpy(dest, data);
+    printf("%s", data);
+    free(data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *str[1] = {(char *)NULL};
+    if ((*str = (char *)malloc(256*sizeof(char))) != NULL)
+        strcpy(*str, "Falut!");
+    **str = 'S';
+    printf("%s\n", *str);
+    free(*str);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *data = (char *)malloc(100*sizeof(char));
+    char *dest = (char *)malloc(100*sizeof(char));
+    data[50-1] = '\0';
+    strcpy(dest, data);
+    free(data);
+    free(dest);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *data = (char *)malloc(100*sizeof(char));
+    char *dest = (char *)malloc(20*sizeof(char));
+    strcpy(dest, data);
+    free(data);
+    free(dest);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *dataCopy = "123456789";
+    int sizeDataCopy = strlen(dataCopy);
+    char *dest = (char *)malloc(10*sizeof(char));
+    int sizeDest = 10;
+    if (sizeDataCopy < sizeDest) {
+        strcpy(dest, dataCopy);
+    }
+    printf("%s\n", dest);
+    free(dest);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100] = "";
+    char *data = dataBuffer;
+    if (fgets(data+dataLen, (int)(100-dataLen), stdin) != NULL)
+        dataLen = strlen(data);
+    data[dataLen-1] = '\0';
+    data[dataLen] = '\0';
+    strcpy(data, "fixedstringtest");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    int size = strlen("shellcode");
+    char *shellcode_location = (char *)malloc(size);
+    strcpy(shellcode_location, "shellcode");
+    printf("%s", shellcode_location);
+    free(shellcode_location);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define MAXSIZE 40
+
+int main (int argc, char **argv) {
+    char *userstr;
+    if(argc > 1) {
+        userstr = argv[1];
+        char buf[MAXSIZE];
+        int l;
+        for(l = 0; userstr[l]; l++)
+            continue;
+        if(l > MAXSIZE)
+            return;
+        strcpy(buf, userstr);
+        printf("result: %s\n", buf);
+    }
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#define MAXSIZE 40
+
+int main (int argc, char **argv) {
+    char buf2[MAXSIZE];
+    char buf1[MAXSIZE];
+    int n;
+    n = read(0, buf1, sizeof buf1);
+    strcpy(buf2, buf1);
+    printf("result: %s\n", buf2);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define MAXSIZE 40
+
+int main (int argc, char **argv) {
+    char *userstr = argv[1];
+    char *buf = malloc(MAXSIZE);
+    if(strlen(userstr) >= MAXSIZE) {
+        strcpy(buf, userstr);
+    }
+    printf("result: %s\n", buf);
+    free(buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define MAXSIZE 40
+
+int main (int argc, char **argv) {
+    char *userstr = argv[1];
+    char *buf = malloc(MAXSIZE);
+    if(strlen(userstr) == MAXSIZE) {
+        strcpy(buf, userstr);
+    }
+    printf("result: %s\n", buf);
+    free(buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define MAXSIZE 40
+
+int main (int argc, char **argv) {
+    char *userstr = argv[1];
+    char *buf = malloc(MAXSIZE);
+    if(strlen(userstr) < MAXSIZE) {
+        strcpy(buf, userstr);
+    }
+    printf("result: %s\n", buf);
+    free(buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define MAX_VAL 40
+
+int main (int argc, char **argv) {
+    int ret = MAX_VAL;
+    ret=5;
+    char **dptr= (char**) malloc(10*sizeof(char*));
+    dptr[ret]= (char*) malloc(0 *sizeof(char));
+    strcpy( dptr[ret],"STRING TEST" );
+    free(dptr[ret]);
+    free(dptr);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define BUFSIZE 60
+
+int main (int argc, char **argv) {
+    char *buf = (char *)malloc(BUFSIZE);
+    if (argc > 1 && strlen(argv[1]) < BUFSIZE) {
+        strcpy(buf, argv[1]);
+    }
+    printf("buf = %s\n", buf);
+    free(buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *first = malloc(666);
+    strcpy(first, argv[1]);
+    free(first);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char **uninit_pointer_016_gbl_doubleptr=(char**) malloc(10*sizeof(char*));
+    uninit_pointer_016_gbl_doubleptr[0]=(char*) malloc(10*sizeof(char));
+    strcpy(uninit_pointer_016_gbl_doubleptr[0],"STRING00");
+    char *s=(char*) malloc(10*sizeof(char));
+    free (uninit_pointer_016_gbl_doubleptr[0]);
+    printf("unint p %s \n",uninit_pointer_016_gbl_doubleptr[0]);
+    strcpy(s,uninit_pointer_016_gbl_doubleptr[0]);
+    printf("unint p %s \n",s);
+    free(s);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *null_pointer_015_gbl_ptr = NULL;
+    char *str = "This is a string";
+    strcpy(null_pointer_015_gbl_ptr,str);
+    null_pointer_015_gbl_ptr = malloc(sizeof(char) * (strlen(str)+1));
+    strcpy(null_pointer_015_gbl_ptr,str);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * containerfoob = NULL;
+    if ((containerfoob = (char *)malloc(256*sizeof(char))) != NULL)
+        strcpy(containerfoob, "Falut!");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * stonesoup_heap_buffer_6 = (char*) malloc(6 * sizeof(char));
+    memset(stonesoup_heap_buffer_6,0,6);
+    strcpy(stonesoup_heap_buffer_6, "sweven_nitwitted");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char *stonesoup_tainted_buff = NULL;
+    char stonesoup_stack_buffer_64[64];
+    int gibbous_intercessive = 1001;
+    char *valoniah_hup;
+    char *enflamed_englished = valoniah_hup;
+    memset(stonesoup_stack_buffer_64,0,64);
+    strcpy(stonesoup_stack_buffer_64,"vire_unroyally");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char exp_dn[200], exp_dn2[200];
+    strcpy(exp_dn2, "sls.lcs.mit.edu");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *temp1 = (char *) malloc(400*sizeof(char));
+    char *temp = temp1;
+    strcpy(temp, "HEADER JUNK:");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char stonesoup_stack_buffer_64[64];
+    int babyfied_volubleness_coelenterata_detruded = 0;
+    memset(stonesoup_stack_buffer_64,0,64);
+    strcpy(stonesoup_stack_buffer_64,"stonesoup_stack_buffer_64+INITIAL-STATE");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 30
+
+int main (int argc, char **argv) {
+    char buf[MAXSIZE] = "";
+    strcpy(buf, argv[1]);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char *buf,buf1[5];
+    buf = "This is a string";
+    strcpy(buf1,buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char **uninit_pointer_016_gbl_doubleptr=(char**) malloc(10*sizeof(char*));
+    uninit_pointer_016_gbl_doubleptr[0]=(char*) malloc(10*sizeof(char));
+    strcpy(uninit_pointer_016_gbl_doubleptr[0],"STRING00");
+    char *s=(char*) malloc(10*sizeof(char));
+    free (uninit_pointer_016_gbl_doubleptr[0]);
+    strcpy(s,uninit_pointer_016_gbl_doubleptr[0]);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char **buf = (char**) malloc(10*sizeof(char*));
+    if (argc > 1)
+        strcpy(buf[2],argv[1]);
+    free(buf[2]);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *str1 = (char *) calloc(25,sizeof(char));
+    char *str2;
+    strcpy(str1, str2);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *buf = malloc(25*sizeof(char));
+    char *t = argv[1];
+    strcpy(buf,t);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char canary[10];
+    strcpy(canary, "GOOD");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char buf[10];
+    strcpy(buf, "my string");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char buf[10];
+    strcpy(buf, "AAAAAAAAAAAAAAAAA");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char buf[10];
+    strcpy(buf, argv[1]);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char exp_dn[200], exp_dn2[200];
+    strcpy(exp_dn, "lcs.mit.edu");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char exp_dn[200], exp_dn2[200];
+    strcpy(exp_dn2, "sls.lcs.mit.edu");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char test_buf[10];
+    strcpy(test_buf, "GOOD");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#define MAXSIZE 20
+
+int main (int argc, char **argv) {
+    char *userstr = argv[1];
+    char buf[MAXSIZE];
+    if(strlen(userstr) >= MAXSIZE)
+        strcpy(buf, userstr);
+    printf("result: %s\n", buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define BUFSIZE 20
+
+int main (int argc, char **argv) {
+    char *buf = (char *) malloc(BUFSIZE * sizeof(char));
+    if (argc > 1 && strlen(argv[1]) >= BUFSIZE)
+        strcpy(buf, argv[1]);
+    printf("buf = %s\n", buf);
+    free(buf);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char *buf = (char *) malloc (25 * sizeof(char));
+    buf = NULL;
+    strcpy(buf,"This is String");
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char *data = (char *)malloc((10+1)*sizeof(char));
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char * data;
+    data = NULL;
+    if(1)
+        data = (char *)malloc(10*sizeof(char));
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char * data;
+    data = NULL;
+    if(5==5)
+        data = (char *)malloc(10*sizeof(char));
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char * data;
+    data = NULL;
+    if(5==5)
+        data = (char *)malloc((10+1)*sizeof(char));
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    static const int STATIC_CONST_TRUE = 1;
+    static const int STATIC_CONST_FALSE = 0;
+    char * data;
+    data = NULL;
+    if(STATIC_CONST_TRUE)
+        data = (char *)malloc(10*sizeof(char));
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    static const int STATIC_CONST_FALSE = 0;
+    char * data;
+    data = NULL;
+    if(STATIC_CONST_FALSE) {}
+    else
+        data = (char *)malloc((10+1)*sizeof(char));
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char * data;
+    data = NULL;
+    for(int i = 0; i < 1; i++)
+        data = (char *)malloc(10*sizeof(char));
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char * data;
+    data = NULL;
+    for(int i = 0; i < 1; i++)
+        data = (char *)malloc((10+1)*sizeof(char));
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char *data;
+    data = NULL;
+    data = (char *)malloc((10+1)*sizeof(char));
+    char *dataCopy = data;
+    data = dataCopy;
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char *data;
+    data = NULL;
+    data = (char *)malloc(10*sizeof(char));
+    char *dataCopy = data;
+    data = dataCopy;
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char * data;
+    char **dataPtr1 = &data;
+    char **dataPtr2 = &data;
+    data = NULL;
+    data = *dataPtr1;
+    data = (char *)malloc(10*sizeof(char));
+    *dataPtr1 = data;
+    data = *dataPtr2;
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define SRC_STRING "AAAAAAAAAA"
+
+int main (int argc, char **argv) {
+    char * data;
+    char **dataPtr1 = &data;
+    char **dataPtr2 = &data;
+    data = NULL;
+    data = *dataPtr1;
+    data = (char *)malloc((10+1)*sizeof(char));
+    *dataPtr1 = data;
+    data = *dataPtr2;
+    char source[10+1] = SRC_STRING;
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = NULL;
+    data = (char *)malloc(50*sizeof(char));
+    data[0] = '\0';
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = NULL;
+    data = (char *)malloc(100*sizeof(char));
+    data[0] = '\0';
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    int globalTrue = 1;
+    int globalFalse = 0;
+    char * data;
+    data = NULL;
+    if(globalTrue)
+		data = (char *)malloc(50*sizeof(char));
+    data[0] = '\0';
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    int globalTrue = 1;
+    int globalFalse = 0;
+    char * data;
+    data = NULL;
+    if(globalTrue)
+		data = (char *)malloc(100*sizeof(char));
+    data[0] = '\0';
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    memset(data, 'A', 100-1);
+    data[100-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    memset(data, 'A', 50-1);
+    data[50-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    memset(data, 'A', 100-1);
+    data[100-1] = '\0';
+    char dest[100] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    if(1)
+		memset(data, 'A', 100-1);
+    data[100-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    if(0){ }
+    else
+        memset(data, 'A', 50-1);
+    data[50-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    static const int STATIC_CONST_TRUE = 1;
+    static const int STATIC_CONST_FALSE = 0;
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    if(STATIC_CONST_TRUE)
+		memset(data, 'A', 100-1);
+    data[100-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    static const int STATIC_CONST_TRUE = 1;
+    static const int STATIC_CONST_FALSE = 0;
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    if(STATIC_CONST_FALSE){ }
+    else
+        memset(data, 'A', 50-1);
+    data[50-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    static const int STATIC_CONST_TRUE = 1;
+    static const int STATIC_CONST_FALSE = 0;
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    if(STATIC_CONST_TRUE)
+        memset(data, 'A', 50-1);
+    data[50-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    static const int STATIC_CONST_FIVE = 5;
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    if(STATIC_CONST_FIVE==5)
+        memset(data, 'A', 100-1);
+    data[100-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    static const int STATIC_CONST_FIVE = 5;
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    if(STATIC_CONST_FIVE!=5){ }
+    else
+        memset(data, 'A', 50-1);
+    data[50-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    switch(6) {
+        case 6:
+            memset(data, 'A', 100-1);
+            data[100-1] = '\0';
+            break;
+        default:
+            break;
+    }
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    switch(5) {
+        case 6:
+            break;
+        default:
+            memset(data, 'A', 50-1);
+            data[50-1] = '\0';
+            break;
+    }
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    while(1) {
+        memset(data, 'A', 100-1);
+        data[100-1] = '\0';
+        break;
+    }
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    while(1) {
+        memset(data, 'A', 100-1);
+        data[100-1] = '\0';
+        break;
+    }
+    char dest[100] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    for(int i = 0; i < 1; i++)
+        memset(data, 'A', 100-1);
+    data[100-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    for(int h = 0; h < 1; h++)
+        memset(data, 'A', 50-1);
+    data[50-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    goto source;
+    source:
+        memset(data, 'A', 100-1);
+        data[100-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    goto source;
+    source:
+        memset(data, 'A', 50-1);
+        data[50-1] = '\0';
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    memset(data, 'A', 100-1);
+    data[100-1] = '\0';
+    char * dataCopy = data;
+    data = dataCopy;
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    data = (char *)malloc(100*sizeof(char));
+    memset(data, 'A', 50-1);
+    data[50-1] = '\0';
+    char * dataCopy = data;
+    data = dataCopy;
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    char **dataPtr1 = &data;
+    char **dataPtr2 = &data;
+    data = (char *)malloc(100*sizeof(char));
+    data = *dataPtr1;
+    memset(data, 'A', 100-1);
+    data[100-1] = '\0';
+    *dataPtr1 = data;
+    data = *dataPtr2;
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main (int argc, char **argv) {
+    char * data;
+    char * *dataPtr1 = &data;
+    char * *dataPtr2 = &data;
+    data = (char *)malloc(100*sizeof(char));
+    data = *dataPtr1;
+    memset(data, 'A', 50-1);
+    data[50-1] = '\0';
+    *dataPtr1 = data;
+    data = *dataPtr2;
+    char dest[50] = "";
+    strcpy(dest, data);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100];
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    char *data = dataBuffer - 8;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100];
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    char *data = dataBuffer;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100];
+    char *data;
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    if(5!=5) { }
+    else
+        data = dataBuffer;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100];
+    char *data;
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    if(5==5)
+        data = dataBuffer;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    static int staticTrue = 1;
+    static int staticFalse = 0;
+    char dataBuffer[100];
+    char *data;
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    if(staticTrue)
+        data = dataBuffer;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    static const int STATIC_CONST_FIVE = 5;
+    char dataBuffer[100];
+    char *data;
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    if(STATIC_CONST_FIVE==5)
+        data = dataBuffer - 8;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char *data;
+    static const int STATIC_CONST_FIVE = 5;
+    char dataBuffer[100];
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    if(STATIC_CONST_FIVE!=5) { }
+    else
+		data = dataBuffer;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char *data;
+    const int GLOBAL_CONST_TRUE = 1;
+    const int GLOBAL_CONST_FALSE = 0;
+    char dataBuffer[100];
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    if(GLOBAL_CONST_TRUE)
+        data = dataBuffer - 16;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char *data;
+    const int GLOBAL_CONST_TRUE = 1;
+    const int GLOBAL_CONST_FALSE = 0;
+    char dataBuffer[100];
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    if(GLOBAL_CONST_FALSE) { }
+    else
+		data = dataBuffer;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char *data;
+    char dataBuffer[100];
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    switch(6) {
+        case 6:
+            data = dataBuffer - 8;
+            break;
+        default:
+            break;
+    }
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char *data;
+    char dataBuffer[100];
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    switch(6) {
+        case 6:
+            data = dataBuffer;
+            break;
+        default:
+            break;
+    }
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100];
+    char * data;
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    data = dataBuffer - 8;
+    char * dataCopy = data;
+    data = dataCopy;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <string.h>
+
+int main (int argc, char **argv) {
+    char dataBuffer[100];
+    char * data;
+    memset(dataBuffer, 'A', 100-1);
+    dataBuffer[100-1] = '\0';
+    data = dataBuffer;
+    char * dataCopy = data;
+    data = dataCopy;
+    char source[100];
+    memset(source, 'C', 100-1);
+    source[100-1] = '\0';
+    strcpy(data, source);
+    return(0);
+}
+---------------------------------
+#include <stdio.h>
+#include <string.h>
+
+#define	MAXSIZE		40
+
+char *shortstr(char *p, int n, int targ) {
+	if(n > targ)
+		return shortstr(p+1, n-1, targ);
+	return(p);
+}
+
+void test(char *str) {
+	char buf[MAXSIZE], *str2;
+
+	str2 = shortstr(str, strlen(str), MAXSIZE-1);
+	strcpy(buf, str2);
+	printf("result: %s\n", buf);
+}
+
+int main(int argc, char **argv) {
+	char userstr[100];
+
+	fgets(userstr, sizeof(userstr), stdin);
+	test(userstr);
+	
+	return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdarg.h>
+
+char buffer[128];
+int writeFormatedString(char *format, ...) {
+    va_list args;
+    int response;
+    va_start(args, format);
+    response = vsprintf(buffer, format, args);
+    va_end(args);
+    return(response);
+} 
+int main (int argc, char **argv) {
+    if(writeFormatedString("%d %s", 5, "vsprintfexample"))
+        printf("%s\n", buffer);
+    return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdarg.h>
+
+void vout(char *string, char *fmt, ...);
+char fmt1 [] = "%s %s %s\n";
+
+int main (int argc, char **argv) {
+    char string[100];
+    vout(string, fmt1, "Sat", "Sun", "Mon");
+    printf("The string is: %s\n", string);
+    return 0;
+}
+void vout(char *string, char *fmt, ...) {
+    va_list arg_ptr;
+    va_start(arg_ptr, fmt);
+    vsprintf(string, fmt, arg_ptr);
+    va_end(arg_ptr);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdarg.h>
+
+char buffer[80];
+int vspfunc(char *format, ...) {
+   va_list aptr;
+   int ret;
+   va_start(aptr, format);
+   ret = vsprintf(buffer, format, aptr);
+   va_end(aptr);
+   return(ret);
+}
+int main (int argc, char **argv) {
+   int i = 5;
+   float f = 27.0;
+   char str[50] = "testvsprintf";
+   vspfunc("%d %f %s", i, f, str);
+   printf("%s\n", buffer);
+   return(0);
+}
+---------------------------------
+
+#include <stdio.h>
+#include <stdarg.h>
+
+void vout(char *string, char *fmt, ...);
+char fmt1 [] = "%s %s %s\n";
+
+int main (int argc, char **argv) {
+    char string[10];
+    vout(string, fmt1, "Saturday", "Sunday", "Monday");
+    printf("The string is: %s\n", string);
+    return 0;
+}
+void vout(char *string, char *fmt, ...) {
+    va_list arg_ptr;
+    va_start(arg_ptr, fmt);
+    vsprintf(string, fmt, arg_ptr);
+    va_end(arg_ptr);
+}
+---------------------------------
